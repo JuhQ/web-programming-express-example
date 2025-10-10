@@ -1,0 +1,45 @@
+### Send GET request to root route
+GET http://127.0.0.1:3000
+
+
+### POST to root route
+POST http://127.0.0.1:3000
+Content-Type: application/json
+
+{"key":"value"}
+
+
+### POST to root route
+POST http://127.0.0.1:3000
+Content-Type: application/json
+
+{"key":"value", "rest":"client", "is":"cool"}
+
+
+### Test the hello route
+GET http://127.0.0.1:3000/hello
+
+
+### Test the query route, without any query params
+GET http://127.0.0.1:3000/query
+
+
+### Test the query route, with one query param
+GET http://127.0.0.1:3000/query?query=params
+
+
+
+### Test the query route, with multiple query params
+GET http://127.0.0.1:3000/query?query=params&another=here
+
+
+### Test the params route, with hello world
+GET http://127.0.0.1:3000/params/hello-world
+
+
+### Test the params route, with number
+GET http://127.0.0.1:3000/params/123
+
+### Test the multiples params route
+GET http://127.0.0.1:3000/multiple-params/123/banana/cat
+
