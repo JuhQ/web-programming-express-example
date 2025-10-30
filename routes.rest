@@ -43,3 +43,26 @@ GET http://127.0.0.1:3000/params/123
 ### Test the multiples params route
 GET http://127.0.0.1:3000/multiple-params/123/banana/cat
 
+
+
+### POST /api/v1/cats route
+POST http://127.0.0.1:3000/api/v1/cats
+Content-Type: application/json
+
+{"cats":"are cool"}
+
+
+### /api/v1/cats/1 route
+GET http://127.0.0.1:3000/api/v1/cats/1
+
+
+### /api/v1/cats/2 route
+GET http://127.0.0.1:3000/api/v1/cats/2
+
+
+### /api/v1/cats/3 route
+# should return error 404
+GET http://127.0.0.1:3000/api/v1/cats/3
+
+
+

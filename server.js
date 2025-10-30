@@ -4,13 +4,18 @@ const helloWorldController = require("./controllers/helloWorld");
 const settings = require("./settings.json");
 const path = require("path");
 
+const api = require("./routes/api");
+
 const hostname = settings.hostname;
 const port = settings.port;
+
 const app = express();
 
 app.use(express.json());
 
 app.use("/static", express.static(path.join(__dirname, "public")));
+
+app.use("/api/v1", api);
 
 app.get("/", helloWorldController);
 
