@@ -6,6 +6,18 @@ const path = require("path");
 
 const api = require("./routes/api");
 
+const promisePool = require("./utils/database");
+
+// TODO: move to model, this is just for testing purposes here
+const listAllCats = async () => {
+  console.log("is this running?");
+  const [rows] = await promisePool.query("SELECT * FROM wsk_cats");
+  console.log("rows", rows);
+  return rows;
+};
+
+listAllCats();
+
 const hostname = settings.hostname;
 const port = settings.port;
 
