@@ -1,14 +1,12 @@
 const { findCatById, findAllCats } = require("../models/cat");
 
-const allCatsController = (req, res) => {
-  console.log("Calling api.js /cats route, which should be /api/v1/cats");
-  console.log(req.body);
-  res.json(findAllCats());
+const allCatsController = async (req, res) => {
+  res.json(await findAllCats());
 };
 
-const getCatById = (req, res) => {
+const getCatById = async (req, res) => {
   const id = Number(req.params.id);
-  const cat = findCatById(id);
+  const [cat] = await findCatById(id);
 
   if (cat) {
     res.json(cat);

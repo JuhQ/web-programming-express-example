@@ -45,11 +45,31 @@ GET http://127.0.0.1:3000/multiple-params/123/banana/cat
 
 
 
+### GET all cats
+GET http://127.0.0.1:3000/api/v1/cats
+
+
 ### POST /api/v1/cats route
 POST http://127.0.0.1:3000/api/v1/cats
 Content-Type: application/json
 
 {"cats":"are cool"}
+
+
+### /api/v1/cats/41 route
+GET http://127.0.0.1:3000/api/v1/cats/41
+
+
+
+
+### /api/v1/cats/41 route with sql injection
+GET http://127.0.0.1:3000/api/v1/cats/41%3BSELECT%20%2A%20FROM%20wsk_users
+
+
+
+### /api/v1/cats/41 route with sql injection
+GET http://127.0.0.1:3000/api/v1/cats/41%20or%201%20%3D%201
+
 
 
 ### /api/v1/cats/1 route

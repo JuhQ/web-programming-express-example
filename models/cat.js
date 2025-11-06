@@ -1,24 +1,20 @@
-// mock data of cats
-const cats = [
-  {
-    id: 1,
-    name: "cat name",
-    fluffy: true,
-    age: 5,
-  },
-  {
-    id: 2,
-    name: "other cat",
-    fluffy: false,
-    age: 0.5,
-    callbackFn: () => {
-      console.log("hello");
-    },
-  },
-];
+const promisePool = require("../utils/database");
 
-const findAllCats = () => cats;
+const findAllCats = async () => {
+  const [rows] = await promisePool.query("SELECT * FROM wsk_cats");
 
-const findCatById = (id) => cats.find((cat) => cat.id === id);
+  return rows;
+};
+
+const findCatById = async (id) => {
+  // TODO: sql injection possibility
+  // https://xkcd.com/327/ bobby tables
+  // https://owasp.org/www-community/attacks/SQL_Injection
+  const [rows] = await promisePool.query(
+    "SELECT * FROM wsk_cats WHERE cat_id = " + id
+  );
+
+  return rows;
+};
 
 module.exports = { findAllCats, findCatById };

@@ -6,22 +6,41 @@ const path = require("path");
 
 const api = require("./routes/api");
 
-const promisePool = require("./utils/database");
-
-// TODO: move to model, this is just for testing purposes here
-const listAllCats = async () => {
-  console.log("is this running?");
-  const [rows] = await promisePool.query("SELECT * FROM wsk_cats");
-  console.log("rows", rows);
-  return rows;
-};
-
-listAllCats();
+const bcrypt = require("bcrypt");
 
 const hostname = settings.hostname;
 const port = settings.port;
 
 const app = express();
+
+console.log(bcrypt.hashSync("password", 10));
+console.log(bcrypt.hashSync("password", 10));
+console.log(bcrypt.hashSync("password", 10));
+console.log(bcrypt.hashSync("password", 10));
+console.log(bcrypt.hashSync("password", 10));
+console.log(bcrypt.hashSync("password", 10));
+console.log(bcrypt.hashSync("password", 10));
+console.log(bcrypt.hashSync("password", 10));
+console.log(bcrypt.hashSync("password", 10));
+console.log(bcrypt.hashSync("password", 10));
+console.log(bcrypt.hashSync("password", 10));
+console.log(bcrypt.hashSync("password", 10));
+console.log(bcrypt.hashSync("password", 10));
+console.log(bcrypt.hashSync("password", 10));
+console.log(bcrypt.hashSync("password", 10));
+console.log(bcrypt.hashSync("password", 10));
+console.log(bcrypt.hashSync("password", 10));
+console.log(bcrypt.hashSync("password", 10));
+console.log(bcrypt.hashSync("password", 10));
+console.log(bcrypt.hashSync("password", 10));
+console.log(bcrypt.hashSync("password", 10));
+console.log(bcrypt.hashSync("password", 10));
+console.log(bcrypt.hashSync("password", 10));
+console.log(bcrypt.hashSync("password", 10));
+console.log(bcrypt.hashSync("password", 10));
+console.log(bcrypt.hashSync("password", 10));
+console.log(bcrypt.hashSync("password", 10));
+console.log(bcrypt.hashSync("password", 10));
 
 app.use(express.json());
 
